@@ -1,1 +1,20 @@
+´services:
+  - type: web
+    name: orquestrador
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn orquestrador:app --host 0.0.0.0 --port 8000
 
+  - type: web
+    name: agente-matematica
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn agente_matematica:app --host 0.0.0.0 --port 8001
+
+  - type: web
+    name: agente-biologia
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn agente_biologia:app --host 0.0.0.0 --port 8002
+
+    
